@@ -14,5 +14,6 @@ public:
 	string getName();
 	int getCost();
 	void display();
+	Event(Event& event);
 };
 

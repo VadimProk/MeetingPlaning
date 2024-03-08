@@ -28,4 +28,7 @@ void Event::display()
 
 }
 
+Event::Event(Event& event):
+	name(event.name), cost(event.cost){}
+
 
