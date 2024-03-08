@@ -34,5 +34,8 @@ void Account::display()
 	cout << "Стать : " << sex << endl << endl;
 }
 
-Account::Account(Account& account):
+Account::Account(const Account& account):
 	name(account.name), age(account.age), sex(account.sex){}
+
+Account::Account(Account&& account) noexcept :
+	name{account.name}, age{account.age}, sex{account.sex}{}

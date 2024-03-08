@@ -11,12 +11,14 @@ private:
 public:
 	Account(string new_name, int new_age);
 	Account(string new_name, int new_age, string new_sex);
+	Account(const Account& account);
+	Account(Account&& account) noexcept;
 	~Account();
 	string getName();
 	int getAge();
 	string getSex();
 	void display();
-	Account(Account& account);
+	
 
 };
 
