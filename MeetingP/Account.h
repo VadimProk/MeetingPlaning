@@ -5,6 +5,7 @@ using namespace std;
 class Account
 {
 private:
+	static int amountOfAcc;
 	string name;
 	int age;
 	string sex;
@@ -14,6 +15,7 @@ public:
 	Account(const Account& account);
 	Account(Account&& account) noexcept;
 	~Account();
+	static int getAmountOfAcc();
 	string getName();
 	int getAge();
 	string getSex();
