@@ -11,11 +11,13 @@ private:
 	string street;
 public:
 	Location(std::string new_country, std::string new_city, std::string new_street);
+	Location(const Location& location);
+	Location(Location&& location) noexcept;
 	~Location();
 	string getCountry();
 	string getCity();
 	string getStreet();
 	void display();
-	Location(Location& location);
+	
 };
 
