@@ -16,6 +16,8 @@ public:
 	int getAge();
 	string getSex();
 	void display();
+	Account(Account& account);
+
 };
 
 

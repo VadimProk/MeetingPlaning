@@ -33,3 +33,6 @@ void Account::display()
 	cout << "Вік : " << age << endl;
 	cout << "Стать : " << sex << endl << endl;
 }
+
+Account::Account(Account& account):
+	name(account.name), age(account.age), sex(account.sex){}

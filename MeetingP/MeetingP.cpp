@@ -20,6 +20,15 @@ int main()
 	Bob.display();
 	Party.display();
 
+	Account CopyAcc(Bob);
+	Location CopyChe(Che);
+	Event CopyP(Party);
+
+	CopyChe.display();
+	CopyP.display();
+	CopyAcc.display();
+
+
 
 	return 0;
 }
