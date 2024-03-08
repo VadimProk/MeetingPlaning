@@ -16,6 +16,8 @@ int main()
 	Account Bob{ "Bob", 20 };
 	Event Party{ "Party", 120 };
 
+	Account David{ "David",13 };
+
 	Che.display();
 	Bob.display();
 	Party.display();
@@ -27,8 +29,11 @@ int main()
 	CopyChe.display();
 	CopyP.display();
 	CopyAcc.display();
-
-
+	
+	cout << Location::getAmountOfLoc() << endl;
+	cout << Account::getAmountOfAcc() << endl;
+	cout << Event::getAmountOfEve() << endl;
+	
 
 	return 0;
 }

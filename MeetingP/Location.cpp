@@ -5,7 +5,9 @@
 using namespace std;
 
 Location::Location(std::string new_country, std::string new_city, std::string new_street) :
-	country{ new_country }, city{ new_city }, street{ new_street } {}
+	country{ new_country }, city{ new_city }, street{ new_street } {
+	amountOfLoc++;
+}
 
 Location::~Location() {}
 
@@ -37,4 +39,9 @@ Location::Location(const Location& location):
 Location::Location(Location&& location) noexcept:
 	country{location.country}, city{location.city}, street{location.street}{}
 
+int Location::amountOfLoc = 0;
 
+int Location::getAmountOfLoc()
+{
+	return amountOfLoc;
+}
