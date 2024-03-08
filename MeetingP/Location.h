@@ -16,5 +16,6 @@ public:
 	string getCity();
 	string getStreet();
 	void display();
+	Location(Location& location);
 };
 

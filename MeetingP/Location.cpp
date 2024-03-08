@@ -31,3 +31,7 @@ void Location::display()
 	cout << "¬улиц€ : " << street << endl << endl;
 }
 
+Location::Location(Location& location):
+	country(location.country), city(location.city), street(location.street){}
+
+
