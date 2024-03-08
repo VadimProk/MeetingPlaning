@@ -28,7 +28,9 @@ void Event::display()
 
 }
 
-Event::Event(Event& event):
+Event::Event(const Event& event):
 	name(event.name), cost(event.cost){}
 
+Event::Event(Event&& event) noexcept :
+	name{event.name}, cost{event.cost}{}
 

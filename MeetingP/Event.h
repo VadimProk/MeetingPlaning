@@ -10,10 +10,12 @@ private:
 public:
 	Event(string new_name);
 	Event(string new_name, int new_cost);
+	Event(const Event& event);
+	Event(Event&& event) noexcept;
 	~Event();
 	string getName();
 	int getCost();
 	void display();
-	Event(Event& event);
+	
 };
 
