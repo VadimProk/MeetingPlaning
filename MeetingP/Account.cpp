@@ -4,6 +4,9 @@
 
 using namespace std;
 
+Account::Account()
+	: Account{ "Unknown" , 0 } {}
+
 Account::Account(string new_name, int new_age)
 	: Account{ new_name, new_age ,"Unknown" } {}
 
@@ -15,22 +18,22 @@ Account::Account(string new_name, int new_age, string new_sex) :
 Account::~Account()
 {}
 
-string Account::getName()
+string Account::getName() const
 {
 	return name;
 }
 
-int Account::getAge()
+int Account::getAge() const
 {
 	return age;
 }
 
-string Account::getSex()
+string Account::getSex() const
 {
 	return sex;
 }
 
-void Account::display()
+void Account::display() const
 {
 	cout << "²ì'ÿ : " << name << endl;
 	cout << "Â³ê : " << age << endl;
@@ -38,12 +41,39 @@ void Account::display()
 }
 
 Account::Account(const Account& account):
-	name(account.name), age(account.age), sex(account.sex){}
+	name(account.name), age(account.age), sex(account.sex){}//CopyConstructor
 
 Account::Account(Account&& account) noexcept :
-	name{account.name}, age{account.age}, sex{account.sex}{}
+	name{account.name}, age{account.age}, sex{account.sex}{}//MoveConstructor
 
 int Account::amountOfAcc = 0;
 int Account::getAmountOfAcc() {
 	return amountOfAcc;
+}
+
+Account& Account::operator=(const Account& rhs)
+{
+	if (this == &rhs) {
+		return *this;
+	}
+	name = rhs.name;
+	age = rhs.age;
+	sex = rhs.sex;
+	return *this;
+}
+
+ostream& operator<<(ostream& os, const Account& obj)
+{
+	os << "²ì'ÿ : " << obj.name << endl;
+	os << "Â³ê : " << obj.age << endl;
+	os << "Ñòàòü : " << obj.sex << endl;
+	return os;
+}
+
+istream& operator>>(istream& is, Account& obj)
+{	
+	cout << "Ââåä³òü ³ì'ÿ - "; is >> obj.name; 
+	cout << "Ââåä³òü â³ê - "; is >> obj.age; 
+	cout << "Ââåä³òü ñòàòü - "; is >> obj.sex; 
+	return is;
 }
