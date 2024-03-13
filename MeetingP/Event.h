@@ -9,15 +9,18 @@ private:
 	int cost;
 	static int amountOfEve;
 public:
+	Event();
 	Event(string new_name);
 	Event(string new_name, int new_cost);
 	Event(const Event& event);
 	Event(Event&& event) noexcept;
 	~Event();
 	static int getAmountOfEve();
-	string getName();
-	int getCost();
-	void display();
-	
+	string getName() const;
+	int getCost() const;
+	void display() const;
+	friend ostream& operator<<(ostream& os, const Event& obj);
+	friend istream& operator>>(istream& is, Event& obj);
+	Event& operator=(const Event& rhs);
 };
 
