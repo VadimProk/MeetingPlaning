@@ -4,13 +4,13 @@
 using namespace std;
 
 Event::Event():
-	Event{"Unknown"} {}
+	Event{ "Unknown"} {}
 
 Event::Event(string new_name) :
-	Event{ new_name, 0 } {}
+	Event{ new_name, 0,"Unknown","Unknown","Unknown" }{}
 
-Event::Event(string new_name, int new_cost) :
-	name{ new_name }, cost{ new_cost } {
+Event::Event(string new_name, int new_cost , string new_country,string new_city,string new_street ) :
+	name{ new_name }, cost{ new_cost }, location{ new_country,new_city,new_street } {
 	amountOfEve++;
 }
 
@@ -29,7 +29,9 @@ int Event::getCost() const
 void Event::display() const
 {
 	cout << "Назва події : " << name << endl;
-	cout << "Вартість : " << cost << endl << endl;
+	cout << "Вартість : " << cost << endl;
+	location.display();
+	
 
 }
 
