@@ -22,9 +22,9 @@ public:
 	static int getAmountOfEve();
 	string getName() const;
 	int getCost() const;
+	void getLocate() const;
 	void display() const;
 	friend ostream& operator<<(ostream& os, const Event& obj);
 	friend istream& operator>>(istream& is, Event& obj);
 	Event& operator=(const Event& rhs);
 };
-
