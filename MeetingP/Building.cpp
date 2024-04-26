@@ -32,4 +32,8 @@ void Building::display() const
 	cout << "Площа : " << area;
 }
 
+string Building::getArea() const
+{
+	return area;
+}
 

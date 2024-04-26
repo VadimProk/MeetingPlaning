@@ -7,11 +7,12 @@ public:
 	Building();
 	Building(string newArea);
 	Building(string newCountry, string newCity, string newStreet, string newArea);
-	~Building();
+	virtual ~Building();
 	Building& operator=(const Building& rhs);
 	Building(const Building& other);
 	Building(const Building&& other) noexcept;
-	void display() const;
+	void display() const override;
+	string getArea() const;
 
 };
 

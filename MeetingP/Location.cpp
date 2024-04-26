@@ -33,7 +33,7 @@ void Location::display() const
 {
 	cout << " рањна : " << country << endl;
 	cout << "ћ≥сто : " << city << endl;
-	cout << "¬улиц€ : " << street << endl << endl;
+	cout << "¬улиц€ : " << street << endl;
 }
 
 Location::Location(const Location& location):

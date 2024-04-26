@@ -15,12 +15,12 @@ public:
 	Location(std::string new_country, std::string new_city, std::string new_street);
 	Location(const Location& location);
 	Location(Location&& location) noexcept;
-	~Location();
+	virtual ~Location();
 	static int getAmountOfLoc();
 	string getCountry() const;
 	string getCity() const;
 	string getStreet() const;
-	void display() const;
+	virtual void display() const;
 	friend ostream& operator<<(ostream& os, const Location& obj);
 	friend istream& operator>>(istream& is, Location& obj);
 	Location& operator=(const Location& rhs);
