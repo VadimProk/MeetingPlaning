@@ -40,6 +40,12 @@ void Account::display() const
 	cout << "Стать : " << sex << endl << endl;
 }
 
+void Account::output() const{
+	cout << "Ім'я : " << name << endl;
+	cout << "Вік : " << age << endl;
+	cout << "Стать : " << sex << endl;
+}
+
 Account::Account(const Account& account):
 	name(account.name), age(account.age), sex(account.sex){}//CopyConstructor
 

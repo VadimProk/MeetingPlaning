@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Output.h"
 
 using namespace std;
 
-class Location {
+class Location : public Output {
 private:
 	string country;
 	string city;
@@ -21,6 +22,7 @@ public:
 	string getCity() const;
 	string getStreet() const;
 	virtual void display() const;
+	void output() const override;
 	friend ostream& operator<<(ostream& os, const Location& obj);
 	friend istream& operator>>(istream& is, Location& obj);
 	Location& operator=(const Location& rhs);

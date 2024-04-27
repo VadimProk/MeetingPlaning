@@ -40,6 +40,12 @@ void Event::display() const
 
 }
 
+void Event::output() const{
+	cout << "Назва події : " << name << endl;
+	cout << "Вартість : " << cost << endl;
+	location.output();
+}
+
 Event::Event(const Event& event) :
 	name(event.name), cost(event.cost), location{ event.location } {}
 

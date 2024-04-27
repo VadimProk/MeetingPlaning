@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "Output.h"
+
 using namespace std;
-class Account
+class Account : public Output
 {
 private:
 	static int amountOfAcc;
@@ -21,6 +23,7 @@ public:
 	int getAge() const;
 	string getSex() const;
 	void display() const;
+	void output() const override;
 	friend ostream& operator<<(ostream& os, const Account& obj);
 	friend istream& operator>>(istream& is, Account& obj);
 	Account& operator=(const Account& rhs);

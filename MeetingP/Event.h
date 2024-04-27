@@ -3,9 +3,10 @@
 #include <iostream>
 #include "Location.h"
 #include "Building.h"
+#include "Output.h"
 
 using namespace std;
-class Event
+class Event : public Output
 {
 private:
 	string name;
@@ -24,6 +25,7 @@ public:
 	int getCost() const;
 	void getLocate() const;
 	void display() const;
+	void output() const override;
 	friend ostream& operator<<(ostream& os, const Event& obj);
 	friend istream& operator>>(istream& is, Event& obj);
 	Event& operator=(const Event& rhs);
